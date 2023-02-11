@@ -1,0 +1,415 @@
+<html>
+<style>
+    body {
+        margin: 0px !important;
+        overflow-x: hidden;
+        width: 100vw;
+        position: relative;
+    }
+</style>
+
+<body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:wght@200&display=swap');
+
+        div.header {
+            background-color: #141D38;
+            height: 41px;
+            color: white;
+        }
+
+        div.newage {
+            background-image: url(../Wafer/assets/wallpaper.jpg);
+            height: 82%;
+            color: white;
+            background-size: cover;
+            font-family: 'Nunito Sans';
+        }
+
+        div.header2 {
+            height: 60px;
+            position: sticky;
+            top: 0;
+
+        }
+
+        .textStyle {
+
+            margin-left: 20%;
+
+        }
+
+        .container {
+
+            width: 100%;
+
+        }
+
+        .image {
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            opacity: 0;
+            transition: .5s ease;
+        }
+
+        .container:hover .overlay {
+            opacity: 1;
+            border-width: 1px;
+            border-color: black;
+        }
+
+        .whitebox {
+            height: 308px;
+            width: 257px;
+            background-color: white;
+            position: relative;
+            box-shadow: 16px 16px 15px 2px rgb(0 0 0 / 30%);
+        }
+
+        .horizaontalScrollBar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5rem;
+            gap: 1rem;
+            overflow: hidden;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .outercontainer {
+            max-width: 200px;
+            position: relative;
+        }
+
+        .outercontainer img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            min-width: 150px;
+
+        }
+
+        div.horizaontalScrollBar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .top-left-quarter-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 300px 0 0 0;
+            background-color: #3498DB;
+            bottom: 0px;
+            position: absolute;
+            left: 157px;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            height: 8%;
+            z-index: 10;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: 'Nunito Sans';
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        li a:hover:not(.active) {
+            background-color: white;
+            color: #3498DB;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        table,
+        td,
+        th {
+
+            text-align: left;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th,
+        td {
+            padding: 15px;
+        }
+
+        #nbr {
+            font-size: 62px;
+            margin: 44px 0 0 0;
+        }
+    </style>
+
+    <script>
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     // it's a div, that holds your news
+        //     // it holds ul with news in li elements
+        //     var div = document.getElementById("container");
+        //     div.addEventListener("scroll", function () {
+        //         var max_scroll = this.scrollWidth - this.clientWidth;
+        //         var current_scroll = this.scrollLeft;
+        //         var bottom = 100;
+        //         if (current_scroll + bottom >= max_scroll) {
+        //             var ul = document.getElementsByClassName("horizaontalScrollBar")[0];
+        //             var current = parseInt(ul.dataset.current, 10);
+        //             var li = document.getElementsByClassName("outercontainer")[current];
+        //             var new_li = li.cloneNode(true);
+        //             ul.appendChild(new_li);
+        //             ul.dataset.current = current + 1;
+        //         }
+        //     });
+        // });
+
+        var speed = 10;
+
+        /* Call this function with a string containing the ID name to
+         * the element containing the number you want to do a count animation on.*/
+        function incEltNbr(id) {
+            elt = document.getElementById(id);
+            endNbr = Number(document.getElementById(id).innerHTML);
+            incNbrRec(0, endNbr, elt);
+        }
+
+        /*A recursive function to increase the number.*/
+        function incNbrRec(i, endNbr, elt) {
+            if (i <= endNbr) {
+                elt.innerHTML = i;
+                setTimeout(function () {//Delay a bit before calling the function again.
+                    incNbrRec(i + 1, endNbr, elt);
+                }, speed);
+            }
+        }
+        /*Function called on button click*/
+        function incNbr() {
+            incEltNbr("nbr");
+        }
+        incEltNbr("nbr");
+
+    </script>
+
+
+    <div class="header">
+        HOMEPAGE
+    </div>
+
+
+    <ul class="header2">
+        <li><img src="../Wafer/assets/1519878897783.jpeg" alt="Flowers in Chania" style="position: relative;
+                margin-left: 350px;"></li>
+        <li style="margin-left: 20%;margin-top: 20px;"><a href="#news">Home</a></li>
+        <li style="margin-top: 20px;"><a href="#contact">About Us</a></li>
+        <li style="margin-top: 20px;"><a href="#about">Contact US</a></li>
+        <li style="float: right;margin-right: 200px;margin-top: 20px;"><img src="../Wafer/assets/search.png" alt="Flowers in Chania" style="width: 25px;height: auto;"></li>
+    </ul>
+
+
+    <div class="newage">
+        <p class="textStyle" style="font-weight: bold;font-size: 24px;padding-top: 170px;">Product Design and
+            Development </p>
+        <p class="textStyle" style="font-size: 60px;font-family: 'Montserrat';">NEW-AGE
+            DIGITAL<br>TRANSFORMATION</p>
+    </div>
+    <br>
+
+    <div style="background-color: whitesmoke;height: 30%;" class="horizaontalScrollBar" data-current="0">
+        <div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/angular-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/angular.png" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/django-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/django.png" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/nodejs-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/node-js.png" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/react-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/react.png" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/rails-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/rails.png" alt="Avatar">
+                </div>
+            </div>
+        </div>
+        <div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/go-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/go.png" alt="Avatar">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="position: relative;">
+        <div style="left: 10%;position: relative;margin-top: 10%;">
+            <span style="font-size: 14px;font-family:'Nunito Sans';
+                font-weight: bold;color: #3498DB;">GREAT IDEAS NEED GREAT EXECUTION</span>
+            <h2 style="font-family: Montserrat; font-size: 36px;">Your Partner for<br>Technology</h2>
+            <p style="font-family:'Nunito Sans';color: #6d6d6d;">Wafer is the partner of choice for many of the world’s
+                <br>leading enterprises and technology challengers.
+                We help businesses <br>elevate their value through custom software development, <br>product design, QA
+                and consultancy services.
+            </p>
+        </div>
+        <div style="left: 40%;position: relative;bottom: 270px;">
+            <img src="../Wafer/assets/image2-home8-1.png" alt="Avatar" style="width: 700px;height: auto;">
+        </div>
+    </div>
+    <div style="background-color: transparent;
+        background-image: linear-gradient(180deg, #3498DB 0%, #1ABC9C 100%);height: 800px;">
+        <div style="top:100px;">
+            <p
+                style="color: white;font-size: 16px;font-family:'Nunito Sans', sans-serif;font-weight: bold;margin-left: 40%;padding-top: 100px;">
+                DIGITALLY TRANSFORMING YOUR BUSINESS
+            </p>
+            <p
+                style="font-family: 'Montserrat', sans-serif;font-weight: 800;color: white;font-size: 37px;margin-left: 35%;margin-top: 0px;">
+                Scalable technology solutions
+                <br>for your business problems
+            </p>
+        </div>
+        <div style="top: 15%;left: 20%;" class="whitebox">
+            <p
+                style="font-size: 22px;font-family:'Nunito Sans', sans-serif;font-weight: 900;padding: 30px;padding-left: 25px;position:absolute">
+                Cloud</p>
+            <p
+                style="font-size: 18px;font-family:'Nunito Sans', sans-serif;color: #6d6d6d;position: absolute;left: 25px;top: 65px;">
+                We enable enterprises to harness the power
+                of cloud by leveraging latest technologies</p>
+            <div class="top-left-quarter-circle">
+                <img src="../Wafer/assets/screen.png" alt="Flowers in Chania"
+                    style="width: 50px;height: 50px; top: 30px;position: relative;left: 35px;">
+            </div>
+        </div>
+        <div style="left: 36%;bottom: 188px;" class="whitebox">
+            <p
+                style="font-size: 22px;font-family:'Nunito Sans', sans-serif;font-weight: 900;padding: 30px;padding-left: 25px;position:absolute">
+                Mobile</p>
+            <p
+                style="font-size: 18px;font-family:'Nunito Sans', sans-serif;color: #6d6d6d;position: absolute;left: 25px;top: 65px;">
+                Keep your mobile customers engaged every step of the way by making the right choices</p>
+            <div class="top-left-quarter-circle">
+                <img src="../Wafer/assets/phone.png" alt="Flowers in Chania"
+                    style="width: 50px;height: 50px; top: 30px;position: relative;left: 35px;">
+            </div>
+        </div>
+        <div style="left: 52%;bottom: 62%;" class="whitebox">
+            <p
+                style="font-size: 22px;font-family:'Nunito Sans', sans-serif;font-weight: 900;padding: 30px;padding-left: 25px;position:absolute">
+                IoT</p>
+            <p
+                style="font-size: 18px;font-family:'Nunito Sans', sans-serif;color: #6d6d6d;position: absolute;left: 25px;top: 65px;">
+                Discover how Internet of things can help in improving your digital transformation journey</p>
+            <div class="top-left-quarter-circle">
+                <img src="../Wafer/assets/watch.png" alt="Flowers in Chania"
+                    style="width: 70px;height: 70px; top: 20px;position: relative;left: 25px;">
+            </div>
+        </div>
+        <div style="left: 68%;bottom: 100.5%" class="whitebox">
+            <p
+                style="font-size: 22px;font-family:'Nunito Sans', sans-serif;font-weight: 900;padding: 30px;padding-left: 25px;position:absolute">
+                RPA</p>
+            <p
+                style="font-size: 18px;font-family:'Nunito Sans', sans-serif;color: #6d6d6d;position: absolute;left: 25px;top: 65px;">
+                Accelerate you business efficiency through an agile approach using Robotic Process Automation</p>
+            <div class="top-left-quarter-circle">
+                <img src="../Wafer/assets/pc.png" alt="Flowers in Chania"
+                    style="width: 50px;height: 50px; top: 30px;position: relative;left: 35px;">
+            </div>
+        </div>
+        <!-- <div
+            style="height: 160px;width: 500px;background-image: url('../Wafer/assets/Contactus.jpg');position: relative;bottom:85%;left: 20%;">
+            <p id="nbr">50</p>
+            <button onclick="incNbr()">Play Again</button>
+        </div> -->
+    </div>
+    <div style="margin-left: 400px;">
+        <p style="font-size: 14px;font-family:'Nunito Sans';
+                font-weight: bold;color: #3498DB;">OUR SERVICE</p>
+        <p style="font-family: 'Montserrat', sans-serif;font-weight: 800;color: black;font-size: 37px;">We Offer a Wide
+            <br>Variety of IT Services
+        </p>
+    </div>
+    <div style="display: flex;align-items: center;justify-content: center;">
+
+        <table>
+            <tr>
+                <th>
+                    <img src="../Wafer/assets/backend.png" alt="Flowers in Chania" style="width: 50px;height: 50px;">
+                    Back-end<br>
+                    Product architecture is essential from the start. We are here to make your back-end lean, scalable,
+                    and secure every at each step.
+                </th>
+                <th><img src="../Wafer/assets/frontend.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;">Front-end</th>
+                <th><img src="../Wafer/assets/mobile.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;">Mobile</th>
+            </tr>
+            <tr>
+                <td><img src="../Wafer/assets/testing.png" alt="Flowers in Chania" style="width: 50px;height: 50px;">QA
+                    & Testing</td>
+                <td><img src="../Wafer/assets/maintenance.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;">Maintenance</td>
+                <td><img src="../Wafer/assets/bar-graph.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;">Consultancy</td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>
