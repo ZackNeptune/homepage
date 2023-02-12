@@ -1,177 +1,11 @@
 <html>
-<style>
-    body {
-        margin: 0px !important;
-        overflow-x: hidden;
-        width: 100vw;
-        position: relative;
-    }
-</style>
+
+<head>
+    <link rel="stylesheet" href="Styles.css">
+</head>
 
 <body>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Nunito+Sans:wght@200&display=swap');
-
-        div.header {
-            background-color: #141D38;
-            height: 41px;
-            color: white;
-        }
-
-        div.newage {
-            background-image: url(../Wafer/assets/wallpaper.jpg);
-            height: 82%;
-            color: white;
-            background-size: cover;
-            font-family: 'Nunito Sans';
-        }
-
-        div.header2 {
-            height: 60px;
-            position: sticky;
-            top: 0;
-
-        }
-
-        .textStyle {
-
-            margin-left: 20%;
-
-        }
-
-        .container {
-
-            width: 100%;
-
-        }
-
-        .image {
-            display: block;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            opacity: 0;
-            transition: .5s ease;
-        }
-
-        .container:hover .overlay {
-            opacity: 1;
-            border-width: 1px;
-            border-color: black;
-        }
-
-        .whitebox {
-            height: 308px;
-            width: 257px;
-            background-color: white;
-            position: relative;
-            box-shadow: 16px 16px 15px 2px rgb(0 0 0 / 30%);
-        }
-
-        .horizaontalScrollBar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 5rem;
-            gap: 1rem;
-            overflow: hidden;
-            max-height: 400px;
-            overflow-y: auto;
-        }
-
-        .outercontainer {
-            max-width: 200px;
-            position: relative;
-        }
-
-        .outercontainer img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            min-width: 150px;
-
-        }
-
-        div.horizaontalScrollBar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .top-left-quarter-circle {
-            width: 100px;
-            height: 100px;
-            border-radius: 300px 0 0 0;
-            background-color: #3498DB;
-            bottom: 0px;
-            position: absolute;
-            left: 157px;
-        }
-
-        ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            background-color: white;
-            position: sticky;
-            top: 0;
-            width: 100%;
-            height: 8%;
-            z-index: 10;
-        }
-
-        li {
-            float: left;
-        }
-
-        li a {
-            display: block;
-            color: black;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-family: 'Nunito Sans';
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        li a:hover:not(.active) {
-            background-color: white;
-            color: #3498DB;
-        }
-
-        .active {
-            background-color: #04AA6D;
-        }
-
-        table,
-        td,
-        th {
-
-            text-align: left;
-        }
-
-        table {
-            border-collapse: collapse;
-            width: 50%;
-        }
-
-        th,
-        td {
-            padding: 15px;
-        }
-
-        #nbr {
-            font-size: 62px;
-            margin: 44px 0 0 0;
-        }
-    </style>
-
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <script>
         // document.addEventListener("DOMContentLoaded", function () {
         //     // it's a div, that holds your news
@@ -192,36 +26,33 @@
         //     });
         // });
 
-        var speed = 10;
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
 
-        /* Call this function with a string containing the ID name to
-         * the element containing the number you want to do a count animation on.*/
-        function incEltNbr(id) {
-            elt = document.getElementById(id);
-            endNbr = Number(document.getElementById(id).innerHTML);
-            incNbrRec(0, endNbr, elt);
-        }
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
 
-        /*A recursive function to increase the number.*/
-        function incNbrRec(i, endNbr, elt) {
-            if (i <= endNbr) {
-                elt.innerHTML = i;
-                setTimeout(function () {//Delay a bit before calling the function again.
-                    incNbrRec(i + 1, endNbr, elt);
-                }, speed);
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
             }
         }
-        /*Function called on button click*/
-        function incNbr() {
-            incEltNbr("nbr");
-        }
-        incEltNbr("nbr");
 
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
     </script>
 
 
     <div class="header">
-        HOMEPAGE
+        <img src="../Wafer/assets/twitter.png" style="height: auto;width: 15px;">
+        <img src="../Wafer/assets/facebook (1).png" style="height: auto;width: 15px;">
+        <img src="../Wafer/assets/linkedin.png" style="height: auto;width: 15px;">
+        <img src="../Wafer/assets/instagram.png" style="height: auto;width: 15px;">
     </div>
 
 
@@ -231,7 +62,8 @@
         <li style="margin-left: 20%;margin-top: 20px;"><a href="#news">Home</a></li>
         <li style="margin-top: 20px;"><a href="#contact">About Us</a></li>
         <li style="margin-top: 20px;"><a href="#about">Contact US</a></li>
-        <li style="float: right;margin-right: 200px;margin-top: 20px;"><img src="../Wafer/assets/search.png" alt="Flowers in Chania" style="width: 25px;height: auto;"></li>
+        <li style="float: right;margin-right: 200px;margin-top: 20px;"><img src="../Wafer/assets/search.png"
+                alt="Flowers in Chania" style="width: 25px;height: auto;"></li>
     </ul>
 
 
@@ -371,43 +203,207 @@
                     style="width: 50px;height: 50px; top: 30px;position: relative;left: 35px;">
             </div>
         </div>
-        <!-- <div
-            style="height: 160px;width: 500px;background-image: url('../Wafer/assets/Contactus.jpg');position: relative;bottom:85%;left: 20%;">
-            <p id="nbr">50</p>
-            <button onclick="incNbr()">Play Again</button>
-        </div> -->
+        <div style="height: 160px;width: 555px;background-image: url('../Wafer/assets/Contactus.jpg');
+        position: relative;bottom: 800px;left:367px;color: white;display: flex;justify-content: left;">
+            <p id="nbr" style="padding: 20px;">12</p>
+            <p style="font-weight: bold;margin: 88px 0 0 0;">Countries Served Worldwide</p>
+            <!-- <button onclick="incNbr()">Play Again</button> -->
+        </div>
     </div>
-    <div style="margin-left: 400px;">
+    <div style="margin-left: 400px;margin-top: 200px;">
         <p style="font-size: 14px;font-family:'Nunito Sans';
                 font-weight: bold;color: #3498DB;">OUR SERVICE</p>
         <p style="font-family: 'Montserrat', sans-serif;font-weight: 800;color: black;font-size: 37px;">We Offer a Wide
             <br>Variety of IT Services
         </p>
     </div>
-    <div style="display: flex;align-items: center;justify-content: center;">
+    <div style="display: flex;align-items: center;justify-content: center;margin-bottom: 100px;">
 
         <table>
             <tr>
-                <th>
-                    <img src="../Wafer/assets/backend.png" alt="Flowers in Chania" style="width: 50px;height: 50px;">
-                    Back-end<br>
-                    Product architecture is essential from the start. We are here to make your back-end lean, scalable,
-                    and secure every at each step.
-                </th>
-                <th><img src="../Wafer/assets/frontend.png" alt="Flowers in Chania"
-                        style="width: 50px;height: 50px;">Front-end</th>
-                <th><img src="../Wafer/assets/mobile.png" alt="Flowers in Chania"
-                        style="width: 50px;height: 50px;">Mobile</th>
+                <td>
+
+                    <img src="../Wafer/assets/backend.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;position: relative;top: 50px; right: 60px;">
+                    <h2 style="color: black;font-weight: bold;">Back-end</h2>
+                    Product architecture is essential from <br>the start. We are here to make your <br>back-end
+                    lean, scalable,
+                    and secure <br>every at each step.
+
+                </td>
+                <td>
+                    <img src="../Wafer/assets/backend.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;position: relative;top: 50px; right: 60px;">
+                    <h2 style="color: black;font-weight: bold;">Front-end</h2>
+                    Our team of Web developers are here to make every part of the user experience work smoothly
+                    using reliable frameworks.
+                </td>
+                <td>
+                    <img src="../Wafer/assets/mobile.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;position: relative;top: 50px; right: 60px;">
+                    <h2 style="color: black;font-weight: bold;">Mobile</h2>
+                    Create complex enterprise software, ensure reliable software integration, modernise your legacy
+                    system.
             </tr>
             <tr>
-                <td><img src="../Wafer/assets/testing.png" alt="Flowers in Chania" style="width: 50px;height: 50px;">QA
-                    & Testing</td>
-                <td><img src="../Wafer/assets/maintenance.png" alt="Flowers in Chania"
-                        style="width: 50px;height: 50px;">Maintenance</td>
-                <td><img src="../Wafer/assets/bar-graph.png" alt="Flowers in Chania"
-                        style="width: 50px;height: 50px;">Consultancy</td>
+                <td>
+                    <img src="../Wafer/assets/testing.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;position: relative;top: 50px; right: 60px;">
+                    <h2 style="color: black;font-weight: bold;">QA & Testing</h2>
+                    Turn to our experts to perform comprehensive, multi-stage testing and auditing of your software.
+                </td>
+                <td>
+                    <img src="../Wafer/assets/maintenance.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;position: relative;top: 50px; right: 60px;">
+                    <h2 style="color: black;font-weight: bold;">Maintenance</h2>
+                    Over the past decade, our customers succeeded by leveraging our quick turnaround time
+                </td>
+                <td>
+                    <img src="../Wafer/assets/bar-graph.png" alt="Flowers in Chania"
+                        style="width: 50px;height: 50px;position: relative;top: 50px; right: 60px;">
+                    <h2 style="color: black;font-weight: bold;">Consultancy</h2>
+                    Trust our top minds to eliminate workflow pain points and implement new technology
+                </td>
             </tr>
         </table>
+    </div>
+    <h1 style="justify-content: center;display: flex;margin-bottom: 100px;">Core Expertise - Web and Mobile Applications
+    </h1><br>
+    <div style="display: flex;align-items: center;height: 100px;justify-content: center;">
+        <table>
+            <tr>
+                <td>
+                    <img src="../Wafer/assets/Typescript_logo.png" style="height: auto;width: 150px;">
+                </td>
+                <td>
+                    <img src="../Wafer/assets/ruby-logo.png" style="height: auto;width: 150px;">
+                </td>
+                <td>
+                    <img src="../Wafer/assets/android-logo.png" style="height: auto;width: 150px;">
+                </td>
+                <td>
+                    <img src="../Wafer/assets/ios-logo.png" style="height: auto;width: 150px;">
+                </td>
+            </tr>
+            <tr>
+                <td>Express, React, Node</td>
+                <td>Ruby on Rails, Sinatra, Liquid</td>
+                <td>Flutter, Android</td>
+                <td>React Native, Swift, Xcode</td>
+            </tr>
+        </table>
+    </div>
+    <h1 style="justify-content: center;display: flex;margin-bottom: 210px;margin-top: 150px;">Platform Expertise -
+        Cloud, RPA and ECommerce
+    </h1><br>
+    <div
+        style="display: flex;align-items: center;height: 100px;justify-content: center;margin-left: 150px;margin-bottom: 250px;">
+        <table>
+            <tr>
+                <td>
+                    <img src="../Wafer/assets/aws-partner-logo.png" style="height: auto;width: 200px;">
+                </td>
+                <td>
+                    <img src="../Wafer/assets/shopify-logo.png" style="height: auto;width: 200px;">
+                </td>
+            </tr>
+            <tr>
+                <td>We leverage Amazon Web Services for <br>Cloud computation, storage, databases and <br>developer
+                    tools for enterprise applications.</td>
+                <td>Our highly-skilled Shopify developers are <br>specialized in building integrations and <br>Shopify
+                    Store Apps</td>
+            </tr>
+            <tr>
+                <td>
+                    <img src="../Wafer/assets/Automation_Anywhere_Logo.jpg" style="height: auto;width: 200px;">
+                </td>
+                <td>
+                    <img src="../Wafer/assets/UiPath_Logo.png" style="height: auto;width: 200px;">
+                </td>
+            </tr>
+            <tr>
+                <td>We’ve evolved a best-practice approach <br>designed to ensure the most appropriate <br>RPA
+                    deployment strategy </td>
+                <td>With the help of UiPath platforms we <br>create business resilience, speed, and agility, and
+                    <br>unburden people from mundane <br>work
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="product">
+
+        <div class="container1">
+            <div class="text" style="color:black;">
+                <img src="../Wafer/assets/web.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                WEB
+            </div>
+            <div class="overlay1">
+                <div class="text">
+                    <img src="../Wafer/assets/web.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                    WEB
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="text" style="color:black;">
+                <img src="../Wafer/assets/android.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                ANDROID
+            </div>
+            <div class="overlay1">
+                <div class="text">
+                    <img src="../Wafer/assets/android.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                    ANDROID
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="text" style="color:black;">
+                <img src="../Wafer/assets/apple.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                IOS
+            </div>
+            <div class="overlay1">
+                <div class="text">
+                    <img src="../Wafer/assets/apple.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                    IOS
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="text" style="color:black;">
+                <img src="../Wafer/assets/watch.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                IOT
+            </div>
+            <div class="overlay1">
+                <div class="text">
+                    <img src="../Wafer/assets/watch.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                    IOT
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="text" style="color:black;">
+                <img src="../Wafer/assets/watch.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                WEARABLE
+            </div>
+            <div class="overlay1">
+                <div class="text">
+                    <img src="../Wafer/assets/watch.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                    WEARABLE
+                </div>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="text" style="color:black;">
+                <img src="../Wafer/assets/tv.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                TV
+            </div>
+            <div class="overlay1">
+                <div class="text">
+                    <img src="../Wafer/assets/tv.png" style="height: 50px;width: 50px;margin-left: 25px;">
+                    TV
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>
