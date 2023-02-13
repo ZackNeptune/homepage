@@ -251,3 +251,24 @@ td {
 #myBtn:hover {
     background-color: white;
 }
+
+  @media screen and ( min-width: 768px ) {
+    /* half-width cells for larger devices */
+    .gallery-cell { width: 50%; }
+  }
+  /* .flickity-gallery {
+    height: 40rem;
+    margin-bottom: 4rem;
+} */
+
+.gallery-cell{
+     height: 150px;
+ }
+ .headersb{
+    border: 1px solid grey;
+    border-top: #141D38;
+    border-bottom: #141D38;
+    justify-content: center;
+    align-items: center;
+    
+ }

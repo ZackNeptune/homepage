@@ -2,10 +2,13 @@
 
 <head>
     <link rel="stylesheet" href="Styles.css">
+    <link rel="stylesheet" href="/path/to/flickity.css" media="screen">
 </head>
 
 <body>
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- <script src="/path/to/flickity.pkgd.min.js"></script>
+    <script src="../Wafer/slider.js"></script> -->
     <script>
         // document.addEventListener("DOMContentLoaded", function () {
         //     // it's a div, that holds your news
@@ -49,10 +52,17 @@
 
 
     <div class="header">
-        <img src="../Wafer/assets/twitter.png" style="height: auto;width: 15px;">
-        <img src="../Wafer/assets/facebook (1).png" style="height: auto;width: 15px;">
-        <img src="../Wafer/assets/linkedin.png" style="height: auto;width: 15px;">
-        <img src="../Wafer/assets/instagram.png" style="height: auto;width: 15px;">
+        <div style="margin-left: 20%;">
+            <img src="../Wafer/assets/twitter.png" style="height: auto;width: 15px;padding: 20px;" class="headersb">
+            <img src="../Wafer/assets/facebook (1).png" style="height: auto;width: 15px;padding: 20px;" class="headersb">
+            <img src="../Wafer/assets/linkedin.png" style="height: auto;width: 15px;padding: 20px;" class="headersb">
+            <img src="../Wafer/assets/instagram.png" style="height: auto;width: 15px;padding: 20px;" class="headersb">
+            <img src="../Wafer/assets/call.png" style="height: auto;width: 15px;padding: 20px;margin-left: 30%;border-right: #141D38;" class="headersb">
+                <span style="position: relative;bottom: 21px;right: 10px;">+91-8806013736</span>
+            <img src="../Wafer/assets/mail.png" style="height: auto;width: 15px;padding: 20px;padding-right: 120px;" class="headersb">
+                <span style="position: relative;bottom: 23px;right: 110px;">info@wafer.ee</span>
+        </div>
+        
     </div>
 
 
@@ -74,6 +84,26 @@
             DIGITAL<br>TRANSFORMATION</p>
     </div>
     <br>
+    <!-- <div class="flickity-gallery js-flickity"
+    data-flickity-options='{ "cellAlign": "left", "contain": true }'>
+        <div class="gallery-cell"><div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/angular-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/angular.png" alt="Avatar">
+                </div>
+            </div>
+        </div></div>
+        <div class="gallery-cell"><div class="outercontainer">
+            <div class="container">
+                <img src="../Wafer/assets/angular-grey.png" alt="Avatar">
+                <div class="overlay">
+                    <img src="../Wafer/assets/angular.png" alt="Avatar">
+                </div>
+            </div>
+        </div></div>
+    </div> -->
+
 
     <div style="background-color: whitesmoke;height: 30%;" class="horizaontalScrollBar" data-current="0">
         <div class="outercontainer">
@@ -204,9 +234,15 @@
             </div>
         </div>
         <div style="height: 160px;width: 555px;background-image: url('../Wafer/assets/Contactus.jpg');
-        position: relative;bottom: 800px;left:367px;color: white;display: flex;justify-content: left;">
-            <p id="nbr" style="padding: 20px;">12</p>
+        position: relative;bottom: 760px;left:367px;color: white;display: flex;justify-content: left;">
+            <p id="nbr" style="padding: 20px;font-family: 'Montserrat', sans-serif;">12</p>
             <p style="font-weight: bold;margin: 88px 0 0 0;">Countries Served Worldwide</p>
+            <!-- <button onclick="incNbr()">Play Again</button> -->
+        </div>
+        <div style="height: 160px;width: 555px;background-image: url('../Wafer/assets/Contactus.jpg');
+        position: relative;bottom: 920px;left:957px;color: white;display: flex;justify-content: left;">
+            <p id="nbr" style="padding: 20px;font-family: 'Montserrat', sans-serif;">50+</p>
+            <p style="font-weight: bold;margin: 88px 0 0 0;">Projects Delivered in Last Five Years</p>
             <!-- <button onclick="incNbr()">Play Again</button> -->
         </div>
     </div>
