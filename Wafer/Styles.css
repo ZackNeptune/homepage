@@ -314,13 +314,14 @@ li a:hover:not(.active) {
     width: 100%;
     background-color: #3b82f6;
     animation-duration: 2s;
-    animation-iteration-count: infinite;
+    /* animation-iteration-count: infinite; */
     animation-name: indeterminate-progress-bar;
+    
 }
 
 @keyframes indeterminate-progress-bar {
     from {
-        left: -50%;
+        right: 0%;
     }
 
     to {
